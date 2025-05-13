@@ -9,7 +9,7 @@ const Blog = require("./models/blog");
 
 const userRoute = require("./routes/user");
 const blogRoute = require("./routes/blog");
-const compression=require('compression')
+
 const {
   checkForAuthenticationCookie,
 } = require("./middleware/authentication");
@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 
 
-app.use(compression())
+
 
 app.use('/public/default.png', (req, res) => {
   res.redirect('/default.png');
